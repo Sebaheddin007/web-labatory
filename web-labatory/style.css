@@ -1,142 +1,78 @@
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f9f9fb;
-  }
-  .circle-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #000;
-    transition: transform 0.3s ease; /* Şəkil üzərində hover effekt */
-  } 
-  .circle-image:hover {
-    transform: scale(1.1); /* Hover zamanı şəkilin böyüməsi */
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+}
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 40px auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.sidebar {
+  width: 35%;
+  background-color: #2f3a50;
+  color: white;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.photo img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  display: block;
+  margin: 0 auto 20px;
+}
+.sidebar .menu,
+.main .menu {
+  list-style: none;
+  padding: 0;
+}
+.sidebar .menu li,
+.main .menu li {
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.sidebar .menu li:hover,
+.main .menu li:hover {
+  background: #3f4a65;
+}
+.main {
+  width: 65%;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.main h1 {
+  color: #2f3a50;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+.main h3 {
+  color: #666;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.content {
+  display: none;
+  margin-top: 20px;
+}
+.content.active {
+  display: block;
+}
+@media (max-width: 768px) {
   .container {
-    display: flex;
-    max-width: 1000px;
-    margin: 30px auto;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    flex-wrap: wrap;
-    border-radius: 10px; 
-    overflow: hidden; 
+    flex-direction: column;
   }
-  
-  .left {
-    width: 35%;
-    background-color: #2f3a50;
-    color: white;
-    padding: 30px;
-    box-sizing: border-box;
-  }
-  
-  .left img {
+  .sidebar,
+  .main {
     width: 100%;
-    border-radius: 10px;
-    margin-bottom: 20px;
   }
-  
-  .left h3 {
-    margin-top: 20px;
-    border-bottom: 2px solid white;
-    padding-bottom: 5px;
-  }
-  
-  .left ul {
-    padding-left: 20px;
-  }
-  
-  .left ul li {
-    margin-bottom: 8px;
-  }
-  
-  .right {
-    width: 65%;
-    background-color: white;
-    padding: 30px;
-    box-sizing: border-box;
-  }
-  
-  .right h1 {
-    color: #2f3a50;
-    font-size: 28px;
-    border-bottom: 4px solid #2f3a50;
-    display: inline-block;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
-  }
-  
-  .right h2 {
-    margin-top: 30px;
-    font-size: 20px;
-    color: #000;
-    border-left: 5px solid #2f3a50;
-    padding-left: 10px;
-    cursor: pointer; /* Başlığa kliklənməsi üçün kursoru dəyişmək */
-  }
-  
-  .right ul {
-    padding-left: 20px;
-    display: block; /* Başlanğıcda məzmun görünsün */
-  }
-  
-  .right ul li {
-    margin-bottom: 8px;
-  }
-  
-  #rightText {
-    cursor: pointer;
-    color: blue;
-    font-weight: bold;
-  }
-  
-  .add-btn {
-    margin-top: 10px;
-    padding: 6px 12px;
-    background-color: #2f3a50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Hover üçün animasiya */
-  }
-  
-  .add-btn:hover {
-    background-color: #3d4a60;
-  }
-  @media (max-width: 768px) {
-    .container {
-      flex-direction: column;
-    }
-    .left,
-    .right {
-      width: 100%;
-    }
-  }  
-  /* Gizlətmə və göstərmə üçün əlavə stil */
-  .right ul {
-    display: none; /* Başlanğıcda gizli */
-  }
-  
-  .right h2.active + ul {
-    display: block; /* Aktiv başlığa uyğun olan ul elementini göstərmək */
-  }
-/* Başlangıcda bütün ul elementləri gizli olmalıdır */
-.right ul {
-    display: none;
-  }
-  
-  .right ul li {
-    margin-bottom: 8px;
-  }
-  .right h2 {
-    margin-top: 30px;
-    font-size: 20px;
-    color: #000;
-    border-left: 5px solid #2f3a50;
-    padding-left: 10px;
-    cursor: pointer; /* Başlığa kliklənməsi üçün kursoru dəyişmək */
-  }
-    
+}
