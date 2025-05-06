@@ -1,36 +1,28 @@
-// Başlığa klikləndikdə məzmunu gizlətmək və ya göstərmək üçün funksiya
+
 document.querySelectorAll('.right h2').forEach((header) => {
     header.addEventListener('click', function() {
-      const list = this.nextElementSibling; // Həmin başlıqdan sonra gələn məzmunu tapırıq
+      const list = this.nextElementSibling; 
       const isActive = this.classList.contains('active');
-  
-      // Başlıqda 'active' sinfi yoxdursa, onu əlavə et
-      document.querySelectorAll('.right h2').forEach(h => h.classList.remove('active')); // Digər başlıqlardan 'active' sinfini silirik
+      document.querySelectorAll('.right h2').forEach(h => h.classList.remove('active'));
       if (!isActive) {
-        this.classList.add('active'); // Başlığa 'active' sinfini əlavə et
+        this.classList.add('active');
       }
-  
-      // Məzmunu göstər və ya gizlət
       document.querySelectorAll('.right ul').forEach((ul) => {
-        ul.style.display = 'none'; // Əvvəlcə bütün məzmunları gizləyirik
+        ul.style.display = 'none'; 
       });
-  
       if (!isActive) {
-        list.style.display = 'block'; // Aktiv olan başlıq üçün məzmunu göstəririk
+        list.style.display = 'block'; 
       }
     });
   });
-// Başlığa klikləndikdə məzmunu gizlətmək və ya göstərmək üçün funksiya
 document.querySelectorAll('.right h2').forEach((header) => {
     header.addEventListener('click', function() {
-      const list = this.nextElementSibling; // Həmin başlıqdan sonra gələn məzmunu tapırıq
-      const isActive = list.style.display === 'block'; // Əgər artıq açıqdırsa
-  
-      // Məzmunu açıb bağlayırıq
+      const list = this.nextElementSibling; 
+      const isActive = list.style.display === 'block';
       if (isActive) {
-        list.style.display = 'none'; // Gizlədirik
+        list.style.display = 'none'; 
       } else {
-        list.style.display = 'block'; // Göstəririk
+        list.style.display = 'block'; 
       }
     });
   });
