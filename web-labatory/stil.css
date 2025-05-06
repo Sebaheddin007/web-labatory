@@ -3,7 +3,6 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f9f9fb;
   }
-  
   .circle-image {
     width: 150px;
     height: 150px;
@@ -11,20 +10,18 @@ body {
     object-fit: cover;
     border: 3px solid #000;
     transition: transform 0.3s ease; /* Şəkil üzərində hover effekt */
-  }
-  
+  } 
   .circle-image:hover {
     transform: scale(1.1); /* Hover zamanı şəkilin böyüməsi */
   }
-  
   .container {
     display: flex;
     max-width: 1000px;
     margin: 30px auto;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     flex-wrap: wrap;
-    border-radius: 10px; /* Containerın kənarlarını yuvarlatmaq */
-    overflow: hidden; /* İçindəki elementlərin kənara daşmaması üçün */
+    border-radius: 10px; 
+    overflow: hidden; 
   }
   
   .left {
@@ -109,7 +106,6 @@ body {
   .add-btn:hover {
     background-color: #3d4a60;
   }
-  
   @media (max-width: 768px) {
     .container {
       flex-direction: column;
@@ -118,8 +114,7 @@ body {
     .right {
       width: 100%;
     }
-  }
-  
+  }  
   /* Gizlətmə və göstərmə üçün əlavə stil */
   .right ul {
     display: none; /* Başlanğıcda gizli */
@@ -136,7 +131,6 @@ body {
   .right ul li {
     margin-bottom: 8px;
   }
-  
   .right h2 {
     margin-top: 30px;
     font-size: 20px;
