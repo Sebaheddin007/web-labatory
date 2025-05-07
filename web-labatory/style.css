@@ -29,21 +29,6 @@ body {
   display: block;
   margin: 0 auto 20px;
 }
-.sidebar .menu,
-.main .menu {
-  list-style: none;
-  padding: 0;
-}
-.sidebar .menu li,
-.main .menu li {
-  padding: 10px;
-  cursor: pointer;
-  font-weight: bold;
-}
-.sidebar .menu li:hover,
-.main .menu li:hover {
-  background: #3f4a65;
-}
 .main {
   width: 65%;
   padding: 30px;
@@ -60,12 +45,24 @@ body {
   margin-top: 0;
   margin-bottom: 20px;
 }
-.content {
-  display: none;
+.section h2 {
+  color: #2f3a50;
   margin-top: 20px;
+  font-size: 20px;
 }
-.content.active {
-  display: block;
+ul {
+  padding-left: 20px;
+}
+button#resetStorage {
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button#resetStorage:hover {
+  background-color: #c9302c;
 }
 @media (max-width: 768px) {
   .container {
