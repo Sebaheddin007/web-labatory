@@ -3,8 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const content = section.querySelector(':not(h2)');
     if (content) {
       content.style.display = 'none';
-      section.querySelector('h2').style.cursor = 'pointer';
-      section.querySelector('h2').addEventListener('click', () => {
+      const header = section.querySelector('h2');
+      header.style.cursor = 'pointer';
+      header.addEventListener('click', () => {
         content.style.display = content.style.display === 'none' ? 'block' : 'none';
       });
     }
@@ -43,7 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   document.getElementById("resetStorage").addEventListener("click", () => {
-    if (confirm("Bütün redaktələri silmək istədiyinizə əminsiniz?")) {
+    const confirmation = confirm("Bütün redaktələri silmək istədiyinizə əminsiniz?");
+    if (confirmation) {
       Object.keys(localStorage).forEach(key => {
         if (key.startsWith("editable_")) {
           localStorage.removeItem(key);
