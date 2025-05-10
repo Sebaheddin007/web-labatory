@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('.collapsible').forEach(section => {
-    const content = section.querySelector(':not(h2)');
+    const content = section.querySelector('div, p, ul, ol');
     if (content) {
       content.style.display = 'none';
       const header = section.querySelector('h2');
@@ -10,26 +10,27 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
   });
+
   document.querySelectorAll(".editable-content").forEach((content, index) => {
     const saved = localStorage.getItem("editable_" + index);
     if (saved) {
-      content.innerHTML = saved;
+      content.textContent = saved; 
     }
     attachEditor(content, index);
   });
+
   function attachEditor(content, index) {
     const parent = content.parentElement;
     parent.addEventListener("dblclick", () => {
       const input = document.createElement("textarea");
       input.style.width = "100%";
-      input.style.height = "auto";
-      input.value = content.innerHTML;
+      input.value = content.textContent;
       parent.replaceChild(input, content);
       input.focus();
       const saveContent = () => {
         const newContent = document.createElement("p");
         newContent.className = "editable-content";
-        newContent.innerHTML = input.value;
+        newContent.textContent = input.value; 
         localStorage.setItem("editable_" + index, input.value);
         parent.replaceChild(newContent, input);
         attachEditor(newContent, index);
@@ -43,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
   document.getElementById("resetStorage").addEventListener("click", () => {
     const confirmation = confirm("Bütün redaktələri silmək istədiyinizə əminsiniz?");
     if (confirmation) {
@@ -53,5 +55,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       location.reload();
     }
+  });
+
+  document.querySelectorAll('.menu li').forEach(item => {
+    item.addEventListener('click', () => {
+      const targetId = item.getAttribute('data-target');
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) { 
+        document.querySelectorAll('.content').forEach(section => {
+          section.classList.remove('active');
+        });
+        targetElement.classList.add('active');
+      }
+    });
   });
 });
