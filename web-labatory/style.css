@@ -45,24 +45,30 @@ body {
   margin-top: 0;
   margin-bottom: 20px;
 }
-.section h2 {
-  color: #2f3a50;
-  margin-top: 20px;
-  font-size: 20px;
+.menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
-ul {
-  padding-left: 20px;
-}
-button#resetStorage {
-  background-color: #d9534f;
-  color: white;
-  border: none;
-  padding: 10px 15px;
+.menu li {
+  background-color: #e0e0e0;
+  padding: 8px 12px;
   border-radius: 6px;
   cursor: pointer;
 }
-button#resetStorage:hover {
-  background-color: #c9302c;
+.menu li:hover {
+  background-color: #d0d0d0;
+}
+.section {
+  margin-top: 20px;
+}
+.content {
+  display: none;
+}
+.content.active {
+  display: block;
 }
 @media (max-width: 768px) {
   .container {
