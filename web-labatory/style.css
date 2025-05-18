@@ -48,15 +48,14 @@ body {
 .menu ul {
   list-style: none;
   padding: 0;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  margin: 0;
 }
 .menu li {
   background-color: #e0e0e0;
-  padding: 8px 12px;
+  padding: 10px 14px;
   border-radius: 6px;
   cursor: pointer;
+  margin-bottom: 8px;
 }
 .menu li:hover {
   background-color: #d0d0d0;
@@ -69,6 +68,18 @@ body {
 }
 .content.active {
   display: block;
+}
+#saveBtn {
+  margin-top: 20px;
+  padding: 10px 16px;
+  background-color: #2f3a50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#saveBtn:hover {
+  background-color: #3f4a60;
 }
 @media (max-width: 768px) {
   .container {
